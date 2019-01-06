@@ -1,0 +1,71 @@
+{
+    "hosting": {
+      "headers": [
+        {
+          "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|ico)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=605000"
+            }
+          ]
+        },
+        {
+          "source": "/mobile.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js)",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "*",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        }
+      ],
+      "public": "dist/ngclub",
+      "trailingSlash": false,
+      "rewrites": [
+        {
+          "source": "!**/*.*",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  }
