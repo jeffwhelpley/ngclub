@@ -1,5 +1,77 @@
-export const toolbox =
-  `<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+export const toolbox_week1 = `<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+    <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
+    <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
+    <category name="Numbers" colour="#5C68A6">
+        <block type="math_number">
+            <field name="NUM">0</field>
+        </block>
+        <block type="math_arithmetic">
+            <field name="OP">ADD</field>
+            <value name="A">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="B">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_random_int">
+            <value name="FROM">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    <category name="Letters" colour="#5CA68D">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+        <block type="text_charAt">
+            <mutation at="true"></mutation>
+            <field name="WHERE">FROM_START</field>
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR" id="uJtQDB4G4ZaKe.4Mkln3" variabletype="">text</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_append">
+            <field name="VAR" id="bkgT?Q+Pzb{Pwz90n=Jg" variabletype="">item</field>
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_length">
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    <category name="Utilities" colour="#5C81A6">
+        <block type="text_print">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+</xml>`;
+
+export const toolbox = `<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
     <category name="Logic" colour="#5C81A6">
         <block type="controls_if"></block>
         <block type="logic_compare">

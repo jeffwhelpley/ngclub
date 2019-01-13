@@ -1,10 +1,12 @@
-<div id="blocklyDiv" style="height: 800px; width: 750px;"></div>
-<div style="position:absolute;top:20px;left:800px">
-  <div style="white-space:pre-wrap;margin-bottom:20px">{{ code }}</div>
-  <button
-    style="padding:10px;cursor:pointer;font-size:14px"
-    *ngIf="code"
-    (click)="runProgram()"
-  >Run Program</button>
+<div class="appcol">
+  <div id="blocklyDiv" style="height:100%"></div>
 </div>
 
+<div class="appcol" *ngIf="code">
+  <div class="codeblock">
+    {{ code }}
+  </div>
+  <button class="runButton" (click)="runProgram()">
+    Run Program
+  </button>
+</div>
