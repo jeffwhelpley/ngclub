@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { toolbox, toolbox_week1 } from './toolbox';
+import { toolbox_week2 } from './toolbox';
 
 declare var Blockly: any;
 
@@ -11,10 +11,11 @@ declare var Blockly: any;
 export class AppComponent implements OnInit {
     workspace: any;
     code: string;
+    isError = false;
 
     ngOnInit() {
         setTimeout(() => {
-            this.workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox_week1 });
+            this.workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox_week2 });
             this.workspace.addChangeListener(() => {
                 Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
                 const code = Blockly.JavaScript.workspaceToCode(this.workspace).replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '');
@@ -36,6 +37,7 @@ export class AppComponent implements OnInit {
         let lines = code.split('\n');
 
         if (!lines || !lines.length || !lines[0].startsWith('var ')) {
+            this.isError = this.isErrorInLines(lines);
             return code;
         }
 
@@ -72,6 +74,8 @@ export class AppComponent implements OnInit {
             }
         }
 
+        this.isError = this.isErrorInLines(rewriteLines);
+
         console.log('rewriteLines');
         console.log(rewriteLines);
         return '\n' + rewriteLines.join('\n');
@@ -99,15 +103,29 @@ export class AppComponent implements OnInit {
     }
 
     getFunctionRaw(lines: string[]) {
-      const functionLines = [];
+        const functionLines = [];
 
-      for (let i = 0; i < lines.length; i++) {
-        functionLines.push(lines[i]);
-        if (lines[i] === '}') {
-          return functionLines.join('\n');
+        for (let i = 0; i < lines.length; i++) {
+            functionLines.push(lines[i]);
+            if (lines[i] === '}') {
+                return functionLines.join('\n');
+            }
         }
-      }
 
-      return functionLines.join('\n');
+        return functionLines.join('\n');
+    }
+
+    isErrorInLines(lines: string[] = []) {
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            if (!line.startsWith('function ') && !line.startsWith(' ') && line !== '' && !line.endsWith(');') && line !== '}') {
+                console.log('issue with --' + line);
+                return true;
+            } else {
+                console.log('line valid:' + lines);
+            }
+        }
+
+        return false;
     }
 }

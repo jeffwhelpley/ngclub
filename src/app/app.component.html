@@ -3,7 +3,7 @@
 </div>
 
 <div class="appcol" *ngIf="code">
-  <div class="codeblock">
+  <div class="codeblock" [ngClass]="{err:isError}">
     {{ code }}
   </div>
   <button class="runButton" (click)="runProgram()">
