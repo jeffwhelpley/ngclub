@@ -6,7 +6,10 @@
   <div class="codeblock" [ngClass]="{err:isError}">
     {{ code }}
   </div>
-  <button class="runButton" (click)="runProgram()">
+  <div *ngIf="isError" class="errMsg">
+    All your code must be in functions!
+  </div>
+  <button *ngIf="!isError" class="runButton" (click)="runProgram()">
     Run Program
   </button>
 </div>
