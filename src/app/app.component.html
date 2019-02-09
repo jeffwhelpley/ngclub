@@ -1,8 +1,8 @@
-<div class="appcol">
+<div class="appcol" [ngClass]="{show:!showCode,hide:showCode}">
   <div id="blocklyDiv" style="height:100%"></div>
 </div>
 
-<div class="appcol" *ngIf="code">
+<div class="appcol" [ngClass]="{show:showCode,hide:!showCode}">
   <div class="codeblock" [ngClass]="{err:isError}">
     {{ code }}
   </div>
@@ -13,3 +13,6 @@
     Run Program
   </button>
 </div>
+
+<button class="toggleButton" *ngIf="!showCode" (click)="showCode=true">Show Code</button>
+<button class="toggleButton" *ngIf="showCode" (click)="showCode=false">Show Blocks</button>

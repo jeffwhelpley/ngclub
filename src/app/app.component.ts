@@ -11,6 +11,7 @@ declare var Blockly: any;
 export class AppComponent implements OnInit {
     workspace: any;
     code: string;
+    showCode = false;
     isError = false;
 
     ngOnInit() {
