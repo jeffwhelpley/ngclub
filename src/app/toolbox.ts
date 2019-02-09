@@ -1,4 +1,12 @@
-export const toolbox_week2 = `<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+export const toolbox = `<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+    <category name="Object" colour="#5C68A6">
+        <block type="dictionary"></block>
+        <block type="array"></block>
+        <block type="number"></block>
+        <block type="string"></block>
+        <block type="true"></block>
+        <block type="false"></block>
+    </category>
     <category name="Logic" colour="#5C81A6">
         <block type="controls_if"></block>
         <block type="logic_compare">

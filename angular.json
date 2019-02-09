@@ -28,7 +28,11 @@
               "./node_modules/blockly/blockly_compressed.js",
               "./node_modules/blockly/blocks_compressed.js",
               "./node_modules/blockly/javascript_compressed.js",
-              "./node_modules/blockly/msg/js/en.js"
+              "./node_modules/blockly/msg/js/en.js",
+              "./src/assets/js/field_textbutton.js",
+              "./src/assets/js/menuly_blocks.js",
+              "./src/assets/js/menuly_codegen.js",
+              "./src/assets/js/menuly_2blocks.js"
             ]
           },
           "configurations": {

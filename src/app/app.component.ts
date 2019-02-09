@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { toolbox_week2 } from './toolbox';
+import { toolbox } from './toolbox';
 
 declare var Blockly: any;
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         setTimeout(() => {
-            this.workspace = Blockly.inject('blocklyDiv', { toolbox: toolbox_week2 });
+            this.workspace = Blockly.inject('blocklyDiv', { toolbox });
             this.workspace.addChangeListener(() => {
                 Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
                 const code = Blockly.JavaScript.workspaceToCode(this.workspace).replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '');
