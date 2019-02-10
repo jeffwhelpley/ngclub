@@ -80,7 +80,7 @@ Blockly.JSON.generalBlockToObj = function(block) {
 
 // three blocks: one to set value in object
 // another to get value in object
-// third to call function in object
+// third to call function in object...for that have custom blog with params
 
 Blockly.JavaScript['true'] = function(block) {
     return true;
