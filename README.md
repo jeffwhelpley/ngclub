@@ -11,6 +11,8 @@ Here are a bunch of great resources for kids that want to learn how to code:
 * [ngHouston videocast about ng-club](https://www.youtube.com/watch?v=WWbeT46pKd0)
 * [Robot Turtles](http://www.robotturtles.com/)
 * [Scratch](https://scratch.mit.edu/)
+* [Google's Blockly](https://developers.google.com/blockly/)
+* [Blockly Dev Tools](https://blockly-demo.appspot.com/static/demos/blockfactory/index.html)
 * [freeCodeCamp](https://www.freecodecamp.org/)
 * [A opinioned list of books, environments, apps, courseware and games](https://medium.com/personal-growth/teach-kids-programming-a2dc04ea9529)
 * [How My 10-Year-Old Learned Javascript](https://hackernoon.com/how-my-10-year-old-learned-javascript-d8782b586db7)
